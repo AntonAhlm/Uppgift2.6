@@ -10,19 +10,16 @@ namespace Program
             Console.WriteLine("Skriv en mening med 3 ord.");
             string Mening = Console.ReadLine();
 
-            int PunktIndexx = Mening.IndexOf(" ");
-            int PunktIndex = Mening.IndexOf(" ",PunktIndexx);
+            int PunktIndex = Mening.IndexOf(" ");
+            int PunktIndex2 = Mening.IndexOf(" ",PunktIndex+1);
 
             string ord1 = Mening[..PunktIndex];
 
-            string ord2 = Mening[(PunktIndex + 1^1)..];
+            string ord2 = Mening[(PunktIndex+1)..(PunktIndex2)];
 
-            string ord3 = Mening[(PunktIndex + 3)..];
+            string ord3 = Mening[(PunktIndex2 + 1)..];
 
-            //Console.WriteLine(ord3 + ord2 + ord1 + ".");
-            Console.WriteLine(ord1);
-            Console.WriteLine(ord2);
-            Console.WriteLine(ord3);
+            Console.WriteLine(ord3 + " " + ord2 + " " + ord1 + ".");
 
         }
     }
